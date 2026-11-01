@@ -53,8 +53,8 @@
             <div class="doc-summary">HL に 16 ビットを足すだけの命令は、符号と零とパリティを古い旗のまま残し、キャリーとハーフキャリーと減算旗だけを新しくする。キャリー付きの加算と減算は、結果から符号と零と溢れを立て直す。減算キャリーは、HL から相手と古いキャリーを引き、結果と旗を返す。演算手の ED 42 の列が、この関数を呼ぶ。
             <span class="summary-en">"Adding a sixteen-bit register to HL keeps the old sign, zero, and parity, and refreshes carry, half-carry, and the subtract flag. Add and subtract with carry recompute sign, zero, and overflow from the result. Subtract-with-carry takes the partner and the old carry away from HL and returns the result and the flags. The processor's ED 42 column calls this function."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> その減算のあと Bad Apple の絵が黒いままである理由は、前の章にある。ネームテーブルが空で、PC が乗算の輪にいる。
-            <span class="summary-en">"NOTE: the reason the Bad Apple frame stays black after this subtract is in the previous chapter. The name table is empty, and the PC is in the multiply."</span>
+            <div class="doc-summary">その減算のあとプレーヤは戻る。700 フレームの絵は画面 1 の白い影で、PC は <code>$C0D7</code>。
+            <span class="summary-en">"After this subtract the player returns. The frame at 700 frames is the screen-1 white silhouette, and the PC is $C0D7."</span>
             </div>
         </section>
         <section class="doc-section">

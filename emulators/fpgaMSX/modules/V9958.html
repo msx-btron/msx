@@ -53,8 +53,8 @@
             <div class="doc-summary">題字と、マントの人物と、石段と、奥の空中都市は、この表を通った VRAM そのものである。Solo Game Author は <a href="https://github.com/kanon-ai">@kanon-ai</a>。左の表紙、五色の MSX ロゴは別の道で、画面 5、モード 0x0C、C-BIOS のスプラッシュである。3 バイトの各色は下位 5 ビットを取り、緑の最上のビットを繰り返して 6 ビットにし、{赤, 緑6, 青} の RGB565 に畳む。
             <span class="summary-en">"The title, the cloaked figure, the stairs, and the city in the air are the VRAM bytes seen through this table. The Solo Game Author is @kanon-ai. The five-color MSX logo on the left of the cover took another road: screen 5, mode 0x0C, the C-BIOS splash. Each of the three color bytes keeps its low five bits. The top bit of green is repeated into six bits, and the word is packed as RGB565, red, green6, blue."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> 題字の下の帯は、この枚ではまだ絵の続きである。理由は、y が 175 から 211 までがベタの <code>0xF1</code> になっておらず、その矩形の HMMV と字形の LMMM が、走行の終わるまでに発行されていないこと。そのあたりから CPU は BIOS の <code>$19Bx</code> を周回している。
-            <span class="summary-en">"NOTE: the band under the title is still the picture continuing. From y 175 through 211 the bytes are not a solid 0xF1, and the HMMV for that rectangle and the LMMM for the glyphs have not been issued when the run stops. From about that point the CPU circulates BIOS $19Bx."</span>
+            <div class="doc-summary">題字の下、y が 176 からの帯は、この 250 フレームの枚では招待である。「for BTRON B-System B-MSX」と「SPACE / A : ENTER THE RUINS」。矩形と字形は VRAM に着いている。
+            <span class="summary-en">"From y 176 down, the band on this 250-frame plate is the invitation. It reads “for BTRON B-System B-MSX” and “SPACE / A : ENTER THE RUINS”. The rectangle and the glyphs are in VRAM."</span>
             </div>
         </section>
         <section class="doc-section">
@@ -66,8 +66,8 @@
             <div class="doc-summary">画面のモードは五つのビット、{M5, M4, M3, M2, M1} に畳んである。画面 1 は <code>0x00</code>、画面 2 は <code>0x04</code>。どちらも 1 行を 32 バイトずつ三度読み、ネームとパターンと色を揃える。パターンのビットが立っていれば色の上位ニブル、下りていれば下位ニブルを塗る。ニブルが 0 のときは枠の色になる。画面 5 は <code>0x0C</code>。1 行 128 バイトで、1 バイトが二つの 4 ビット画素、偶数側が上位ニブル、16 色のパレットを引く。画面 8 は <code>0x1C</code>。1 行 256 バイトの番号である。R#20 のビット 4 が立っていれば pal256 を引き、下りていればそのバイトを GGGRRRBB として RGB565 にする。表示を許すのは R#1 のビット 6。帰線のあいだは黒を返し、表示が下りているあいだは R#7 の下位ニブルの枠色を返す。
             <span class="summary-en">"The mode is five bits, {M5, M4, M3, M2, M1}. Screen 1 is 0x00 and screen 2 is 0x04. Each reads a line in three bursts of 32 bytes: name, pattern, and color. A set pattern bit paints the high color nibble, a clear bit the low nibble. A nibble of 0 becomes the border color. Screen 5 is 0x0C, 128 bytes on a line, two 4-bit pixels in a byte, the even pixel in the high nibble, indexed in the 16-color palette. Screen 8 is 0x1C, 256 indexes on a line. When bit 4 of R#20 is set the index enters pal256. When it is clear the byte is GGGRRRBB, packed as RGB565. Bit 6 of R#1 allows the display. Blanking returns black. While the display is off, the low nibble of R#7 is the border color."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> 画面 0、画面 3、画面 6、画面 7 は、文字もビットマップも歩かない。理由は、そのモードの画素が R#7 の上位ニブルのパレット色を一面に返すだけで、ネームもパターンも読まないこと。BULLRUSH の「C-BIOS」と、btron8 の画面 7 は、その平らな色のままである。
-            <span class="summary-en">"NOTE: screens 0, 3, 6, and 7 do not walk characters or a bitmap. A pixel in those modes returns one palette color, the high nibble of R#7, and the walk reads neither a name nor a pattern. BULLRUSH's C-BIOS text and btron8's screen 7 stay that flat color."</span>
+            <div class="doc-summary"><strong>NOTE:</strong> 画面 0、画面 3、画面 6、画面 7 は、文字もビットマップも歩かない。理由は、そのモードの画素が R#7 の上位ニブルのパレット色を一面に返すだけで、ネームもパターンも読まないこと。btron8 の画面 7 は、その平らな色のままである。
+            <span class="summary-en">"NOTE: screens 0, 3, 6, and 7 do not walk characters or a bitmap. A pixel in those modes returns one palette color, the high nibble of R#7, and the walk reads neither a name nor a pattern. btron8's screen 7 stays that flat color."</span>
             </div>
             <div class="doc-summary"><strong>NOTE:</strong> スプライトは合成されない。理由は、属性とパターンの床を控える欄はあっても、走査がその床を読まないこと。c0man のスプライトは VRAM にあり、画面には出ない。
             <span class="summary-en">"NOTE: sprites are not composited. The registers that hold the attribute and pattern bases are there, and the scan does not read those bases. c0man's sprites sit in VRAM and do not reach the frame."</span>

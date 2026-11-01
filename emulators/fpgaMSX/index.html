@@ -78,16 +78,27 @@
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/aurel.png" width="256" height="212" decoding="sync" fetchpriority="high" alt="AUREL VAULT title on MSX screen 8: a cloaked figure on stone stairs, gold lettering, ruins opening onto a floating city">
+                            <img src="frames/aurel.png?v=1793538537" width="256" height="212" decoding="sync" fetchpriority="high" alt="AUREL VAULT invitation on MSX screen 8: a cloaked figure on stone stairs, gold lettering, and a dark band reading SPACE / A : ENTER THE RUINS">
                         </div>
                         <figcaption>
                             <span><b>AUREL VAULT</b> — Screen 8 · EPAL</span>
                             <span>Solo Game Author · <a href="https://github.com/kanon-ai">@kanon-ai</a></span>
                         </figcaption>
                     </figure>
-                    <p>金の題字、マントの人物、石段、奥の空中都市。Solo Game Author は <a href="https://github.com/kanon-ai">@kanon-ai</a>。画面 8、モード <code>0x1C</code>、R#20 は <code>0x11</code>。この枚は VRAM を 256 色で描き直した題字である。</p>
-                    <p><strong>NOTE:</strong> キャプション帯は、この枚に無い。理由は、y が 175 以降がまだ絵の続きで、帯の HMMV と字形の LMMM が発行される前に走行が止まっていること。</p>
-                    <p class="en">AUREL VAULT. Solo Game Author: <a href="https://github.com/kanon-ai">@kanon-ai</a>. Screen 8, mode 0x1C, R#20 0x11. This plate is the title redrawn from VRAM through the 256-color table. NOTE: the caption bar is not in the frame. From y 175 on the bytes are still the picture, and the run stopped before the HMMV and the glyph LMMM.</p>
+                    <p>金の題字、マントの人物、石段、奥の空中都市。下の帯は「for BTRON B-System B-MSX」と「SPACE / A : ENTER THE RUINS」。Solo Game Author は <a href="https://github.com/kanon-ai">@kanon-ai</a>。画面 8、モード <code>0x1C</code>、表示は上、R#1 は <code>0x40</code>、R#20 は <code>0x11</code>。カートリッジに入って 250 フレーム。PC は <code>$8DCB</code>、バンクは 22/00。256 色の表を通した VRAM である。</p>
+                    <p class="en">AUREL VAULT. Solo Game Author: <a href="https://github.com/kanon-ai">@kanon-ai</a>. Gold title, cloaked figure, stairs, and the city in the air. The band underneath reads “for BTRON B-System B-MSX” and “SPACE / A : ENTER THE RUINS”. Screen 8, mode 0x1C, display on, R#1 0x40, R#20 0x11. Two hundred and fifty frames after the cartridge entry. PC is $8DCB, banks are 22/00. The plate is VRAM read through the 256-color table.</p>
+                    <figure class="plate">
+                        <div class="field">
+                            <img src="frames/aurel-stage.png?v=1793541579" width="256" height="212" decoding="async" alt="AUREL VAULT stage 1-1 after Space: floating islands above the sea, a figure on the left, and a band reading ARROWS RUN, Z JUMP, X CATCH">
+                        </div>
+                        <figcaption>
+                            <span><b>AUREL VAULT</b> — after Space</span>
+                            <span>PC $A8BF · banks 1E/00</span>
+                        </figcaption>
+                    </figure>
+                    <p>スペースは上の招待で押した。カートリッジに入って 250 フレーム、PC は <code>$8DCB</code>、行 8 は <code>FE</code>、走査はそのキーを PC <code>$9294</code> で読んだ。12.3 秒後の絵がこれで、STAGE 1-1。末尾の PC は <code>$A8BF</code>、バンクは 1E/00、R#2 は <code>0x3F</code>、表示は上。その録音は <a href="audio/aurel.mp3?v=1793542139">aurel.mp3</a>。PSG と SCC と turboR PCM の混合はどのサンプルも 0、平均は -91 dB、R8 から R10 は 0 のまま。</p>
+                    <audio controls preload="none" src="audio/aurel.mp3?v=1793542139" style="width:100%;max-width:256px"></audio>
+                    <p class="en">Space went down on the invitation above, at frame 250 after cartridge entry, PC $8DCB. Row 8 read FE, and the scan saw that key at PC $9294. 12.3 seconds later the picture is this one, stage 1-1. The run ends at PC $A8BF, banks 1E/00, R#2 0x3F, display on. The recording is <a href="audio/aurel.mp3?v=1793542139">aurel.mp3</a>. Every sample of the PSG, SCC, and turboR PCM mix is 0, the mean is -91 dB, and R8 through R10 stayed 0.</p>
                 </div>
             </div>
         </section>
@@ -424,30 +435,31 @@
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/badapple.png" width="256" height="212" decoding="async" alt="Bad Apple: a black frame">
+                            <img src="frames/badapple.png?v=1793536537" width="256" height="212" decoding="async" alt="Bad Apple: white silhouette of a girl on a black screen-1 field, with a black band along the bottom">
                         </div>
                         <figcaption>
-                            <span><b>Bad Apple</b> — black</span>
-                            <span>ASCII16 · 2 MB · Z80</span>
+                            <span><b>Bad Apple</b> — Screen 1</span>
+                            <span>PC 0xC0D7 · SP 0xF380 · Z80</span>
                         </figcaption>
                     </figure>
-                    <p>黒。</p>
-                    <p><strong>NOTE:</strong> <code>EX (SP),HL</code> と <code>SBC HL,ss</code> のあと除算は戻る。355 フレームまで色は一つ。ネームテーブルは 0。PC は C-BIOS の乗算 <code>$3196</code>、SP は <code>$4E96</code>、R#1 は <code>0x60</code>。参照の画面 1 の影にはまだなっていない。</p>
-                    <p class="en">Black. NOTE: after EX (SP),HL and SBC HL,ss the division returns. Through 355 frames the frame is one color. The name table is 0. PC is the C-BIOS multiply at $3196, SP is $4E96, R#1 is 0x60. It is not yet the screen-1 silhouette of the reference.</p>
+                    <p>画面 1、モード <code>0x00</code>、表示は上。白の影が黒地に出ている。下の帯は 192 ラインの外で黒。カートリッジに入って 700 フレーム、PC はプレーヤの <code>$C0D7</code>、バンクは 07/08、R#1 は <code>0x60</code>。</p>
+                    <p class="en">Screen 1, mode 0x00, display on. A white silhouette on black. The band under the 192 lines is black. Seven hundred frames after the cartridge entry, PC is the player at $C0D7, banks are 07/08, and R#1 is 0x60.</p>
+                    <p>入口からの 25.2 秒。鳴っているのは PSG で、ピークは 5872、平均は -28 dB。SCC は 0、turboR PCM は <code>0x80</code>。末尾の PSG は R7 <code>0xB1</code>、R9 <code>0x07</code>、R10 <code>0x06</code>、PC は <code>$C0D1</code>、バンクは 0F/10。<a href="audio/badapple.mp3?v=1793541579">badapple.mp3</a></p>
+                    <audio controls preload="none" src="audio/badapple.mp3?v=1793541579" style="width:100%;max-width:256px"></audio>
+                    <p class="en">25.2 seconds from cartridge entry. The PSG is what plays: peak 5872, mean -28 dB. SCC is 0 and the turboR PCM is 0x80. At the end PSG R7 is 0xB1, R9 is 0x07, R10 is 0x06, PC is $C0D1, and the banks are 0F/10. <a href="audio/badapple.mp3?v=1793541579">badapple.mp3</a></p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/bullrush.png" width="256" height="212" decoding="async" alt="BULLRUSH: one green field">
+                            <img src="frames/bullrush.png?v=1793558010" width="256" height="212" decoding="async" alt="BULLRUSH: screen 8 city, a machine on the road, header BULLRUSH / T TEXTURE">
                         </div>
                         <figcaption>
-                            <span><b>BULLRUSH</b> — one green</span>
-                            <span>PC 0xEC00 · SP 0xF2FC · R800</span>
+                            <span><b>BULLRUSH</b> — Screen 8</span>
+                            <span>PC 0xEC01 · SP 0xF2FC · R800</span>
                         </figcaption>
                     </figure>
-                    <p>緑一色。</p>
-                    <p><strong>NOTE:</strong> ネームテーブルの「C-BIOS」は VRAM にある。画面 0 は文字を歩かず、R#7 の上位ニブルのパレット色を一面に返す。</p>
-                    <p class="en">One green. NOTE: the name table holds the word C-BIOS in VRAM. Screen 0 does not walk the characters, and returns the palette color of the high nibble of R#7 across the whole field.</p>
+                    <p>画面 8、モード <code>0x1C</code>、表示は上。上の帯は BULLRUSH / T TEXTURE。中央は街と機体、下の帯は ROLLER DASH / AUTO DEMO。カートリッジに入って 400 フレーム。R#2 は <code>0x3F</code>、R#20 は <code>0x11</code>、R#21 は <code>0x00</code>、バンクは 0A/00。終わりの PC は <code>$EC01</code>、SP は <code>$F2FC</code>。Geo3D の書き込みは 3846111、画素は 8388746。OPLL の書き込みは 0。</p>
+                    <p class="en">Screen 8, mode 0x1C, display on. The top band reads BULLRUSH / T TEXTURE. The middle is the city and the machine, and the bottom band reads ROLLER DASH / AUTO DEMO. Four hundred frames after cartridge entry. R#2 is 0x3F, R#20 is 0x11, R#21 is 0x00, and the banks are 0A/00. The ending PC is $EC01 and SP is $F2FC. Geo3D writes are 3846111 and drawn pixels are 8388746. OPLL writes are 0.</p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
@@ -466,16 +478,18 @@
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/neon.png" width="256" height="212" decoding="async" alt="NEON REVENANT: a near-black field with a very dark green">
+                            <img src="frames/neon.png?v=1793548833" width="256" height="212" decoding="async" alt="NEON REVENANT: screen 8 title, ship centered, PRESS SPACE TO START">
                         </div>
                         <figcaption>
-                            <span><b>NEON REVENANT</b> — dark field</span>
-                            <span>PC 0x026B · SP 0xF2CD · R800</span>
+                            <span><b>NEON REVENANT</b> — Screen 8</span>
+                            <span>PC 0x9685 · SP 0xF2EA · R800</span>
                         </figcaption>
                     </figure>
-                    <p>暗い面。</p>
-                    <p><strong>NOTE:</strong> 400 フレームのあと R#2 は <code>0x1F</code>、表示は頁 0 の細いヘッダのまま。メニューは頁の外にあり、Y=512 からの HMMM は着いていない。その走行の PC は <code>$19BD</code>。</p>
-                    <p class="en">A dark field. NOTE: after 400 frames R#2 is 0x1F and the display is still the thin header on page 0. The menu is off that page, and the HMMM from Y=512 has not arrived. The PC of that run is $19BD.</p>
+                    <p>画面 8、モード <code>0x1C</code>、表示は上。題字は NEON REVENANT。艦は中央、下は PRESS SPACE TO START。カートリッジに入って 600 フレーム。R#2 は <code>0x3F</code>、R#20 は <code>0x11</code>、R#21 は <code>0x00</code>、バンクは 28/00。終わりの PC は <code>$9685</code>、SP は <code>$F2EA</code>。頁 0 と Y=512 は同じ 18 色。Geo3D の書き込みは 19。</p>
+                    <p class="en">Screen 8, mode 0x1C, display on. The title is NEON REVENANT. The ship is centered, and the line under it is PRESS SPACE TO START. Six hundred frames after cartridge entry. R#2 is 0x3F, R#20 is 0x11, R#21 is 0x00, and the banks are 28/00. The ending PC is $9685 and SP is $F2EA. Page 0 and Y=512 are the same 18 colors. Geo3D writes are 19.</p>
+                    <p>入口からの 8.2 秒。鳴っているのは OPLL で、書き込みは 2846、ピークは 7624、平均は -28 dB。PSG の R8 から R10 は 0、R7 は <code>0xBF</code>。SCC は 0、turboR PCM は <code>0x80</code>。<a href="audio/neon.mp3?v=1793548833">neon.mp3</a></p>
+                    <audio controls preload="none" src="audio/neon.mp3?v=1793548833" style="width:100%;max-width:256px"></audio>
+                    <p class="en">8.2 seconds from cartridge entry. The OPLL is what plays: 2846 writes, peak 7624, mean -28 dB. PSG R8 through R10 are 0 and R7 is 0xBF. SCC is 0 and the turboR PCM is 0x80. <a href="audio/neon.mp3?v=1793548833">neon.mp3</a></p>
                 </div>
             </div>
         </section>
@@ -546,20 +560,20 @@
                         <tr>
                             <td><b>Bad Apple (ASCII16)</b></td>
                             <td>2 MB、ホスト側 ASCII16。初期化 <code>0x4810</code></td>
-                            <td>台帳は <code>0x0039</code>。現行のコアは C-BIOS の乗算 <code>$3196</code>。Z80</td>
-                            <td><a href="frames/badapple.png">黒</a>。NOTE: <code>EX (SP),HL</code> と <code>SBC HL,ss</code> のあと除算は戻る。355 フレームまで色は一つ。ネームテーブルは 0。PC は C-BIOS の乗算 <code>$3196</code>、SP は <code>$4E96</code>、R#1 は <code>0x60</code>。参照の画面 1 の影にはまだなっていない。</td>
+                            <td><code>0xC0D7</code> / <code>0xF380</code>。Z80</td>
+                            <td><a href="frames/badapple.png?v=1793536537">白い影</a>。画面 1、モード <code>0x00</code>、表示は上。カートリッジに入って 700 フレーム、バンクは 07/08、R#1 は <code>0x60</code>。入口から 25.2 秒の PSG は <a href="audio/badapple.mp3?v=1793541579">badapple.mp3</a>。</td>
                         </tr>
                         <tr>
                             <td><b>BULLRUSH.ROM</b></td>
                             <td>1 MB、ASCII16、R800</td>
-                            <td><code>0xEC00</code> / <code>0xF2FC</code></td>
-                            <td><a href="frames/bullrush.png">緑一色</a>。NOTE: ネームテーブルの「C-BIOS」は VRAM にある。画面 0 は文字を歩かず、R#7 の上位ニブルのパレット色を一面に返す。</td>
+                            <td><code>0xEC01</code> / <code>0xF2FC</code></td>
+                            <td><a href="frames/bullrush.png?v=1793558010">街</a>。画面 8、表示は上。400 フレーム、R#2 は <code>0x3F</code>、R#20 は <code>0x11</code>、R#21 は <code>0x00</code>、バンクは 0A/00。上は BULLRUSH / T TEXTURE、下は ROLLER DASH / AUTO DEMO。Geo3D の書き込みは 3846111。</td>
                         </tr>
                         <tr>
                             <td><b>AUREL_VAULT.rom</b></td>
                             <td>1 MB、ASCII16、R800</td>
-                            <td>台帳 <code>0x8D94</code> / <code>0xF2FA</code>。題字の長い実行は BIOS <code>$19Bx</code> を周回する。</td>
-                            <td><a href="frames/aurel.png">題字</a>（表札）。画面 8、EPAL。Solo Game Author は <a href="https://github.com/kanon-ai">@kanon-ai</a>。NOTE: キャプション帯は無い。y が 175 以降は絵の続きで、HMMV と字形の LMMM は未発行。20 フレームの平らな緑は <a href="frames/aurel-flat.png">別枚</a>。</td>
+                            <td>台帳 <code>0x8D94</code> / <code>0xF2FA</code>。招待は <code>$8DCB</code>。スペースのあとは <code>$A8BF</code>、バンク 1E/00。</td>
+                            <td><a href="frames/aurel.png?v=1793538537">招待</a>（表札）。画面 8、表示は上。下の帯は SPACE / A : ENTER THE RUINS。カートリッジに入って 250 フレーム、PC は <code>$8DCB</code>、バンクは 22/00。スペースのあと STAGE 1-1 は <a href="frames/aurel-stage.png?v=1793541579">別の絵</a>。その 12.3 秒は <a href="audio/aurel.mp3?v=1793542139">aurel.mp3</a> で、混合は 0。20 フレームの平らな緑は <a href="frames/aurel-flat.png">別枚</a>。</td>
                         </tr>
                         <tr>
                             <td><b>btron8.rom</b></td>
@@ -582,8 +596,8 @@
                         <tr>
                             <td><b>NEON_REVENANT</b></td>
                             <td>4 MB、ASCII16、R800</td>
-                            <td><code>0x026B</code> / <code>0xF2CD</code></td>
-                            <td><a href="frames/neon.png">暗い面</a>。NOTE: 400 フレームのあと R#2 は <code>0x1F</code>、表示は頁 0 の細いヘッダのまま。メニューは頁の外にあり、Y=512 からの HMMM は着いていない。その走行の PC は <code>$19BD</code>。</td>
+                            <td><code>0x9685</code> / <code>0xF2EA</code></td>
+                            <td><a href="frames/neon.png?v=1793548833">題字</a>。画面 8、表示は上。600 フレーム、R#2 は <code>0x3F</code>、R#20 は <code>0x11</code>、R#21 は <code>0x00</code>、バンクは 28/00。頁 0 と Y=512 は同じ 18 色。Geo3D の書き込みは 19。8.2 秒は <a href="audio/neon.mp3?v=1793548833">neon.mp3</a>。OPLL のピークは 7624、書き込みは 2846。</td>
                         </tr>
                     </tbody>
                 </table>
@@ -615,7 +629,7 @@
                     <tbody>
                         <tr>
                             <td>SCREEN 0</td>
-                            <td>NOTE: モード <code>0x01</code> は文字を歩かない。表示中のその他のモードと同じく、画素は R#7 の上位ニブルのパレット色を一面に返す。BULLRUSH の「C-BIOS」は VRAM にあり、画面には出ない。</td>
+                            <td>NOTE: モード <code>0x01</code> は文字を歩かない。表示中のその他のモードと同じく、画素は R#7 の上位ニブルのパレット色を一面に返す。</td>
                         </tr>
                         <tr>
                             <td>スプライト</td>
@@ -631,11 +645,11 @@
                         </tr>
                         <tr>
                             <td>Bad Apple</td>
-                            <td><code>EX (SP),HL</code> と <code>SBC HL,ss</code> は <a href="modules/CPUCore.html">CPUCore</a> にあり、除算は戻る。NOTE: 現行のフレームは黒のまま。ネームテーブルは 0、PC は C-BIOS の乗算 <code>$3196</code>、R#1 は <code>0x60</code>。台帳の <code>PC=0x0039</code> はその前の記録。</td>
+                            <td><code>EX (SP),HL</code> と <code>SBC HL,ss</code> は <a href="modules/CPUCore.html">CPUCore</a> にあり、除算は戻る。700 フレームの絵は画面 1 の白い影で、PC はプレーヤの <code>$C0D7</code>。</td>
                         </tr>
                         <tr>
                             <td>NEON REVENANT</td>
-                            <td>NOTE: 400 フレームのあと R#2 は <code>0x1F</code>、表示ページは細いヘッダのまま。メニューをページ 0 へコピーする HMMM は、その枚ではまだ着いていない。</td>
+                            <td>題字は着いた。画面 8、モード <code>0x1C</code>、600 フレーム。R#2 は <code>0x3F</code>、R#20 は <code>0x11</code>、R#21 は <code>0x00</code>。頁 0 と Y=512 は同じ 18 色。終わりの PC は <code>$9685</code>、バンクは 28/00。OPLL のピークは 7624。<a href="audio/neon.mp3?v=1793548833">neon.mp3</a> は 8.2 秒。</td>
                         </tr>
                         <tr>
                             <td>xracing の SP</td>

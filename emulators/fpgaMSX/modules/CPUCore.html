@@ -69,8 +69,8 @@
             <div class="doc-summary">16 ビットの増減は、対になる命令の下のビットで足すか引くかが決まる。DEC DE はその減少の側で、DE から 1 を引く。MULUB と MULUQ は、次の章の乗算器が旗を返すまで、この人が待っている歩みである。
             <span class="summary-en">"A sixteen-bit increment or decrement takes its direction from the low bit of the pair opcode. DEC DE is the decreasing side, and it subtracts one from DE. MULUB and MULUQ are the steps this person waits in, until the multiplier in the next chapter returns the flags."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> Bad Apple の画面は、除算が戻ったあとも黒い。理由は、355 フレームまで色が一つで、ネームテーブルが 0 のまま、PC が C-BIOS の乗算 <code>$3196</code> を周回し、SP が <code>$4E96</code>、R#1 が <code>0x60</code> のまま、参照側の画面 1 の流れと分かれていること。
-            <span class="summary-en">"NOTE: the Bad Apple frame stays black after the divide returns. The capture through 355 frames is one color, the name table is still zero, the PC circulates the C-BIOS multiply at $3196, SP sits at $4E96, R#1 stays 0x60, and the flow has left the reference screen-1 path."</span>
+            <div class="doc-summary">除算が戻ったあと、プレーヤは <code>$C000</code> で走る。700 フレームの絵は画面 1 の白い影で、PC は <code>$C0D7</code>、SP は <code>$F380</code>、R#1 は <code>0x60</code>、バンクは 07/08。
+            <span class="summary-en">"After the divide returns, the player runs at $C000. The frame at 700 frames is the screen-1 white silhouette. PC is $C0D7, SP is $F380, R#1 is 0x60, and the banks are 07/08."</span>
             </div>
             <div class="doc-summary"><strong>NOTE:</strong> 割り込みを受ける拍にプレフィクスが残る扱いは、実機の Z80 と揃っていない。理由は、その拍のプレフィクスを実機の割り込み応答と同じ規則で捨てていないこと。
             <span class="summary-en">"NOTE: a prefix still held on the beat an interrupt is accepted does not match a real Z80. The prefix on that beat is not dropped by the same rule as the machine's interrupt response."</span>
