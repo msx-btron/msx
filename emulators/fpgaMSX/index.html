@@ -348,8 +348,8 @@
                 <p class="band-eyebrow">frames/ · 口絵と重ならない十枚</p>
             </div>
             <div class="doc-summary">
-                口絵の二枚が、この本の表に出す絵である。五色のロゴは口絵に一枚、AUREL VAULT の題字も口絵に一枚。同じ絵はここでは繰り返さない。この列は、それ以外の掲載である。YAZZIER、Dynamite Go! Go!、Night Raven の二枚は同じランナーの以前の PPM で、縦の縞は第13章のビームが 168 歩を 256 画素に引き伸ばした跡である。平らな枚は、その平らなまま置く。
-                <span class="summary-en">"The two plates of the frontispiece are the pictures this book puts forward. The five-color logo is there once, and the AUREL VAULT title is there once. This row does not repeat them. YAZZIER, Dynamite Go! Go!, and the two Night Raven plates are earlier PPM files from the same runner. Their vertical stripes are chapter 13's beam, stretching 168 steps into 256 pixels. A flat frame stays flat."</span>
+                口絵の二枚が、この本の表に出す絵である。五色のロゴは口絵に一枚、AUREL VAULT の題字も口絵に一枚。同じ絵はここでは繰り返さない。この列は、それ以外の掲載である。YAZZIER と Dynamite Go! Go! は同じランナーの以前の PPM で、縦の縞は第13章のビームが 168 歩を 256 画素に引き伸ばした跡である。Night Raven の二枚は画面 5 の全列である。平らな枚は、その平らなまま置く。
+                <span class="summary-en">"The two plates of the frontispiece are the pictures this book puts forward. The five-color logo is there once, and the AUREL VAULT title is there once. This row does not repeat them. YAZZIER and Dynamite Go! Go! are earlier PPM files from the same runner. Their vertical stripes are chapter 13's beam, stretching 168 steps into 256 pixels. The two Night Raven plates are every column of screen 5. A flat frame stays flat."</span>
             </div>
 
             <div class="plate-row">
@@ -381,28 +381,31 @@
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/flight.png" width="256" height="212" decoding="async" alt="Night Raven MSX3 GEO3D menu with launch instructions and a status bar">
+                            <img src="frames/flight.png?v=1793560871" width="256" height="212" decoding="async" alt="Night Raven Flight: DEV DEMO menu over a cockpit, SPACE TO LAUNCH, status bar NIGHT RAVEN V9968+GEO3D">
                         </div>
                         <figcaption>
-                            <span><b>Night Raven Flight</b></span>
-                            <span>PC 0xCC2F · SP 0xF2FA · R800</span>
+                            <span><b>Night Raven Flight</b> — Screen 5</span>
+                            <span>PC 0xCC2D · SP 0xF2FA · R800</span>
                         </figcaption>
                     </figure>
-                    <p>メニューが読める。「ARROWS OR JOYSTICK」「SPACE TO LAUNCH」。14 色。CPU が VRAM に書いた絵を、V9958 が走査している。</p>
-                    <p><strong>NOTE:</strong> Geo3D の演算器は無い。理由は、<code>Geo3D.bsv</code> がツリーに無く、このメニューがそのコプロセッサを呼んでいないこと。</p>
+                    <p>画面 5、モード <code>0x0C</code>、表示は上。上の帯は NIGHT RAVEN V9968+GEO3D。中央のメニューは NIGHT RAVEN / DEV DEMO、ARROWS OR JOYSTICK、SPACE FIRE、X MISSILE、HOLD AIM TO LOCK、SPACE TO LAUNCH。下の帯は SH と MS と X MISSILE。カートリッジに入って 280 フレーム。R#2 は <code>0x3F</code>、R#20 は <code>0x01</code>、R#21 は <code>0x00</code>、バンクは 37/00。終わりの PC は <code>$CC2D</code>、SP は <code>$F2FA</code>。Geo3D の書き込みは 1295621、画素は 10205767。OPLL の書き込みは 0。10 色。</p>
+                    <p class="en">Screen 5, mode 0x0C, display on. The top band reads NIGHT RAVEN V9968+GEO3D. The menu reads NIGHT RAVEN / DEV DEMO, ARROWS OR JOYSTICK, SPACE FIRE, X MISSILE, HOLD AIM TO LOCK, SPACE TO LAUNCH. The bottom band reads SH, MS, and X MISSILE. Two hundred eighty frames after cartridge entry. R#2 is 0x3F, R#20 is 0x01, R#21 is 0x00, and the banks are 37/00. The ending PC is $CC2D and SP is $F2FA. Geo3D writes are 1295621 and drawn pixels are 10205767. OPLL writes are 0. Ten colors.</p>
+                    <p>入口から 40 フレームでスペースを押したままの 6.28 秒。鳴っているのは PSG のノイズで、曲ではない。混合のピークは 2032、生の PSG は 4064、平均は -30.6 dB、最大は -24.2 dB。末尾は R0 <code>0x30</code>、R6 <code>0x0F</code>、R7 <code>0xB7</code>、R8 <code>0x09</code>。PC は <code>$CC2F</code>、バンクは 3D/00。メニューの絵はキーを押さない 280 フレームのまま。<a href="audio/flight.mp3?v=1793564319">flight.mp3</a></p>
+                    <audio controls preload="none" src="audio/flight.mp3?v=1793564319" style="width:100%;max-width:256px"></audio>
+                    <p class="en">6.28 seconds with Space held from frame 40 after entry. What plays is PSG noise, not a tune. The mixed peak is 2032, the raw PSG peak is 4064, the mean is -30.6 dB, and the max is -24.2 dB. At the end R0 is 0x30, R6 is 0x0F, R7 is 0xB7, and R8 is 0x09. PC is $CC2F and the banks are 3D/00. The menu plate stays the 280-frame take with no key down. <a href="audio/flight.mp3?v=1793564319">flight.mp3</a></p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/geo3d.png" width="256" height="212" decoding="async" alt="Black starfield, a red dithered nebula, and a blue-green planet on the right">
+                            <img src="frames/geo3d.png?v=1793565093" width="256" height="212" decoding="async" alt="Night Raven Geo3D cockpit: starfield, one reticle, status NIGHT RAVEN V9968+GEO3D 000000, GUN I / BREAK!">
                         </div>
                         <figcaption>
-                            <span><b>Night Raven Geo3D</b></span>
-                            <span>PC 0xEC60 · SP 0xF2FE · R800</span>
+                            <span><b>Night Raven Geo3D</b> — Screen 5</span>
+                            <span>PC 0xEC59 · SP 0xF2FC · R800</span>
                         </figcaption>
                     </figure>
-                    <p>星と星雲と、右の惑星。CPU が VRAM に書いた絵を V9958 が走査している。</p>
-                    <p><strong>NOTE:</strong> 幾何アクセラレータは無い。理由は、<code>Geo3D.bsv</code> が無く、この惑星も VDP の走査であること。</p>
+                    <p>画面 5、モード <code>0x0C</code>、表示は上。上の帯は NIGHT RAVEN V9968+GEO3D 000000。中央は星と機体、照準は一つ。下の帯は SH と GUN I / BREAK!。カートリッジに入って 50 フレーム、全 185 フレーム。R#2 は <code>0x3F</code>、R#8 は <code>0x0A</code>、R#20 は <code>0x01</code>、R#21 は <code>0x00</code>、バンクは 36/00。終わりの PC は <code>$EC59</code>、SP は <code>$F2FC</code>。Geo3D の書き込みは 161738、画素は 1192301。OPLL の書き込みは 0。14 色。白は 1085 画素。</p>
+                    <p class="en">Screen 5, mode 0x0C, display on. The top band reads NIGHT RAVEN V9968+GEO3D 000000. The middle is the starfield and the ship, with one reticle. The bottom band reads SH and GUN I / BREAK!. Fifty frames after cartridge entry, 185 frames in all. R#2 is 0x3F, R#8 is 0x0A, R#20 is 0x01, R#21 is 0x00, and the banks are 36/00. The ending PC is $EC59 and SP is $F2FC. Geo3D writes are 161738 and drawn pixels are 1192301. OPLL writes are 0. Fourteen colors. White is 1085 pixels.</p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
@@ -471,9 +474,8 @@
                             <span>PC 0xFF94 · SP 0xEFBB · R800</span>
                         </figcaption>
                     </figure>
-                    <p>黒。</p>
-                    <p><strong>NOTE:</strong> 画面 7。走査の列が無く、R#7 の上位ニブルの平らな色のまま。</p>
-                    <p class="en">Black. NOTE: screen 7. The scan has no column walk, and the frame stays the flat color of the high nibble of R#7.</p>
+                    <p>黒のまま置く。画面 7 の走査は歩く。400 フレーム、モード <code>0x14</code>、表示は上。R#2 は <code>0x02</code>、R#7 は <code>0xF4</code>、R#9 は <code>0x80</code>、R#21 は <code>0x01</code>。終わりの PC は <code>$0C1C</code>、SP は <code>$F3EE</code>、バンクは 3B/01。選ばれた頁はバイト <code>0x88</code> で、枠は一色である。Hypermedia Network、Heart Sutra (TAD)、NORTIA Letter のメニューは <code>0x10000</code> にあり、R#2 のビット 5 が下りているので選ばれない。OPLL の書き込みは 0。</p>
+                    <p class="en">The black plate stays. The screen 7 scan does walk. Four hundred frames, mode 0x14, display on. R#2 is 0x02, R#7 is 0xF4, R#9 is 0x80, and R#21 is 0x01. The ending PC is $0C1C, SP is $F3EE, and the banks are 3B/01. The selected page is the byte 0x88, so the frame is one color. The menu Hypermedia Network, Heart Sutra (TAD), and NORTIA Letter sits at 0x10000, and bit 5 of R#2 is clear, so that page is not selected. OPLL writes are 0.</p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
@@ -578,20 +580,20 @@
                         <tr>
                             <td><b>btron8.rom</b></td>
                             <td>MegaROM、R800</td>
-                            <td><code>0xFF94</code> / <code>0xEFBB</code></td>
-                            <td><a href="frames/btron8.png">黒</a>。NOTE: 画面 7。走査の列が無く、R#7 の上位ニブルの平らな色のまま。</td>
+                            <td><code>0x0C1C</code> / <code>0xF3EE</code></td>
+                            <td><a href="frames/btron8.png">黒</a>のまま。画面 7 は歩く。400 フレーム、R#2 は <code>0x02</code>、選ばれた頁は <code>0x88</code>。メニューは <code>0x10000</code> にあり、選ばれない。</td>
                         </tr>
                         <tr>
                             <td><b>NIGHT_RAVEN_FLIGHT_DEMO</b></td>
                             <td>MegaROM、R800</td>
-                            <td><code>0xCC2F</code> / <code>0xF2FA</code></td>
-                            <td><a href="frames/flight.png">メニュー</a></td>
+                            <td><code>0xCC2D</code> / <code>0xF2FA</code></td>
+                            <td><a href="frames/flight.png?v=1793560871">メニュー</a>。画面 5、表示は上。280 フレーム、R#2 は <code>0x3F</code>、バンクは 37/00。上は NIGHT RAVEN V9968+GEO3D、中央は SPACE TO LAUNCH。Geo3D の書き込みは 1295621。スペースを押した 6.28 秒は <a href="audio/flight.mp3?v=1793564319">flight.mp3</a>。PSG のピークは 2032、平均は -30.6 dB。末尾は R7 <code>0xB7</code>、R6 <code>0x0F</code>、R8 <code>0x09</code>。</td>
                         </tr>
                         <tr>
                             <td><b>NIGHT_RAVEN_GEO3D</b></td>
                             <td>MegaROM、R800</td>
-                            <td><code>0xEC60</code> / <code>0xF2FE</code></td>
-                            <td><a href="frames/geo3d.png">惑星</a></td>
+                            <td><code>0xEA84</code> / <code>0xF300</code></td>
+                            <td><a href="frames/geo3d.png?v=1793565093">機体</a>。画面 5、表示は上。50 フレーム、R#2 は <code>0x3F</code>、バンクは 36/00。上は NIGHT RAVEN V9968+GEO3D 000000、下は GUN I / BREAK!。Geo3D の書き込みは 161738。白は 1085 画素。</td>
                         </tr>
                         <tr>
                             <td><b>NEON_REVENANT</b></td>
@@ -641,7 +643,7 @@
                         </tr>
                         <tr>
                             <td>画面 6 / 7</td>
-                            <td>NOTE: 走査の列が無い。画素は R#7 の上位ニブルのパレット色である。btron8 は画面 7 のまま、その平らな色。</td>
+                            <td>画面 6 はまだ歩かない。画面 7 は歩く。1 行 256 バイト、上位ニブルが R#7 の下位と違うとき上位を塗る。btron8 の R#2 は <code>0x02</code> で頁 0 を選び、その頁は <code>0x88</code> なので枠は一色。メニューは <code>0x10000</code>。</td>
                         </tr>
                         <tr>
                             <td>Bad Apple</td>
