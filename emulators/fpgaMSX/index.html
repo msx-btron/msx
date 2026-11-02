@@ -467,15 +467,15 @@
                 <div class="cell">
                     <figure class="plate">
                         <div class="field">
-                            <img src="frames/btron8.png" width="256" height="212" decoding="async" alt="btron8: a black frame">
+                            <img src="frames/btron8.png?v=1793568574" width="256" height="212" decoding="async" alt="btron8: menu bar, shell, Hypermedia Network list, white left pane">
                         </div>
                         <figcaption>
                             <span><b>btron8</b> — Screen 7</span>
-                            <span>PC 0xFF94 · SP 0xEFBB · R800</span>
+                            <span>PC 0x47D0 · SP 0xEFEA · R800</span>
                         </figcaption>
                     </figure>
-                    <p>黒のまま置く。画面 7 の走査は歩く。400 フレーム、モード <code>0x14</code>、表示は上。R#2 は <code>0x02</code>、R#7 は <code>0xF4</code>、R#9 は <code>0x80</code>、R#21 は <code>0x01</code>。終わりの PC は <code>$0C1C</code>、SP は <code>$F3EE</code>、バンクは 3B/01。選ばれた頁はバイト <code>0x88</code> で、枠は一色である。Hypermedia Network、Heart Sutra (TAD)、NORTIA Letter のメニューは <code>0x10000</code> にあり、R#2 のビット 5 が下りているので選ばれない。OPLL の書き込みは 0。</p>
-                    <p class="en">The black plate stays. The screen 7 scan does walk. Four hundred frames, mode 0x14, display on. R#2 is 0x02, R#7 is 0xF4, R#9 is 0x80, and R#21 is 0x01. The ending PC is $0C1C, SP is $F3EE, and the banks are 3B/01. The selected page is the byte 0x88, so the frame is one color. The menu Hypermedia Network, Heart Sutra (TAD), and NORTIA Letter sits at 0x10000, and bit 5 of R#2 is clear, so that page is not selected. OPLL writes are 0.</p>
+                    <p>画面 7、モード <code>0x14</code>、表示は上。355 フレーム。R#2 は <code>0x1F</code> で頁 0 を選ぶ。バンクは 00/01。終わりの PC は <code>$47D0</code>、SP は <code>$EFEA</code>。上の帯はメニュー。右はシェルと Hypermedia Network の一覧、Heart Sutra (TAD) と NORTIA Letter。左の窓の本体はバイト <code>0x99</code> の塗り。R#7 は <code>0x08</code>、R#9 は <code>0x80</code>、R#21 は <code>0x01</code>。OPLL の書き込みは 0。</p>
+                    <p class="en">Screen 7, mode 0x14, display on. 355 frames. R#2 is 0x1F and selects page 0. The banks are 00/01. The ending PC is $47D0 and SP is $EFEA. The top band is the menu. The right side is the shell and the Hypermedia Network list, Heart Sutra (TAD) and NORTIA Letter. The left window body is a fill of the byte 0x99. R#7 is 0x08, R#9 is 0x80, and R#21 is 0x01. OPLL writes are 0.</p>
                 </div>
                 <div class="cell">
                     <figure class="plate">
@@ -580,8 +580,8 @@
                         <tr>
                             <td><b>btron8.rom</b></td>
                             <td>MegaROM、R800</td>
-                            <td><code>0x0C1C</code> / <code>0xF3EE</code></td>
-                            <td><a href="frames/btron8.png">黒</a>のまま。画面 7 は歩く。400 フレーム、R#2 は <code>0x02</code>、選ばれた頁は <code>0x88</code>。メニューは <code>0x10000</code> にあり、選ばれない。</td>
+                            <td><code>0x47D0</code> / <code>0xEFEA</code></td>
+                            <td><a href="frames/btron8.png?v=1793568574">机</a>。画面 7、表示は上。355 フレーム、R#2 は <code>0x1F</code>、バンクは 00/01。上はメニュー、右はシェルと Hypermedia Network。左の窓の本体は <code>0x99</code>。</td>
                         </tr>
                         <tr>
                             <td><b>NIGHT_RAVEN_FLIGHT_DEMO</b></td>
@@ -643,7 +643,7 @@
                         </tr>
                         <tr>
                             <td>画面 6 / 7</td>
-                            <td>画面 6 はまだ歩かない。画面 7 は歩く。1 行 256 バイト、上位ニブルが R#7 の下位と違うとき上位を塗る。btron8 の R#2 は <code>0x02</code> で頁 0 を選び、その頁は <code>0x88</code> なので枠は一色。メニューは <code>0x10000</code>。</td>
+                            <td>画面 6 はまだ歩かない。画面 7 は歩く。1 行 256 バイト、上位ニブルが R#7 の下位と違うとき上位を塗る。btron8 は R#2 <code>0x1F</code>、頁 0。355 フレームでメニューと右の一覧が出る。左の窓の本体は <code>0x99</code>。</td>
                         </tr>
                         <tr>
                             <td>Bad Apple</td>
