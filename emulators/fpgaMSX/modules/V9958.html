@@ -61,7 +61,7 @@
             <div class="band-head">
                 <span class="band-index">02 / Modes</span>
                 <h2 class="jp-title">2. 歩ける画面と、歩けない画面</h2>
-                <p class="band-eyebrow">1 · 2 · 5 · 7 · 8</p>
+                <p class="band-eyebrow">0 · 1 · 2 · 5 · 7 · 8</p>
             </div>
             <div class="doc-summary">画面のモードは五つのビット、{M5, M4, M3, M2, M1} に畳んである。画面 1 は <code>0x00</code>、画面 2 は <code>0x04</code>。どちらも 1 行を 32 バイトずつ三度読み、ネームとパターンと色を揃える。パターンのビットが立っていれば色の上位ニブル、下りていれば下位ニブルを塗る。ニブルが 0 のときは枠の色になる。画面 5 は <code>0x0C</code>。1 行 128 バイトで、1 バイトが二つの 4 ビット画素、偶数側が上位ニブル、16 色のパレットを引く。画面 8 は <code>0x1C</code>。1 行 256 バイトの番号である。R#20 のビット 4 が立っていれば pal256 を引き、下りていればそのバイトを GGGRRRBB として RGB565 にする。表示を許すのは R#1 のビット 6。帰線のあいだは黒を返し、表示が下りているあいだは R#7 の下位ニブルの枠色を返す。
             <span class="summary-en">"The mode is five bits, {M5, M4, M3, M2, M1}. Screen 1 is 0x00 and screen 2 is 0x04. Each reads a line in three bursts of 32 bytes: name, pattern, and color. A set pattern bit paints the high color nibble, a clear bit the low nibble. A nibble of 0 becomes the border color. Screen 5 is 0x0C, 128 bytes on a line, two 4-bit pixels in a byte, the even pixel in the high nibble, indexed in the 16-color palette. Screen 8 is 0x1C, 256 indexes on a line. When bit 4 of R#20 is set the index enters pal256. When it is clear the byte is GGGRRRBB, packed as RGB565. Bit 6 of R#1 allows the display. Blanking returns black. While the display is off, the low nibble of R#7 is the border color."</span>
@@ -69,11 +69,14 @@
             <div class="doc-summary">画面 7 は <code>0x14</code>。1 行 256 バイト。R#2 のビット 5 が頁で、下りていれば <code>0x00000</code>、立っていれば <code>0x10000</code>。1 バイトの上位ニブルが R#7 の下位ニブルと違うときは上位を塗り、同じときは下位を塗る。btron8 は 400 フレーム、R#2 は <code>0x02</code> なので頁 0。その頁はバイト <code>0x88</code> で、枠は一色である。Hypermedia Network のメニューは <code>0x10000</code> にあり、この R#2 はそこを選ばない。
             <span class="summary-en">"Screen 7 is 0x14. A line is 256 bytes. Bit 5 of R#2 is the page: clear is 0x00000, set is 0x10000. When the high nibble differs from the low nibble of R#7, that high nibble is painted. When they match, the low nibble is painted. btron8 at 400 frames has R#2 equal to 0x02, so the page is 0. That page is the byte 0x88, and the frame is one color. The Hypermedia Network menu is at 0x10000, and this R#2 does not select it."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> 画面 0、画面 3、画面 6 は、文字もビットマップも歩かない。理由は、そのモードの画素が R#7 の上位ニブルのパレット色を一面に返すだけで、ネームもパターンも読まないこと。
-            <span class="summary-en">"NOTE: screens 0, 3, and 6 do not walk characters or a bitmap. A pixel in those modes returns one palette color, the high nibble of R#7, and the walk reads neither a name nor a pattern."</span>
+            <div class="doc-summary">画面 0 はモード <code>0x01</code>。ネームは R#2 の下位 7 ビットを 10 ビット左へずらし、パターンは R#4 の下位 6 ビットを 11 ビット左へずらす。横 40 字、1 字は 6 画素、192 ライン。x が 8 未満か 248 以上は枠で、R#7 の下位ニブル。それ以外は列 (x−8)/6 の字を引き、ビットが立っていれば R#7 の上位ニブル、下りていれば枠。縦のずらしは足さない。ビームは 256 列のうち 168 歩なので、掲載の PPM は 40 列を 1 画素ずつ塗る。c0man は 450 フレーム、R#7 は <code>0x21</code>、緑の字は COMAN と HIGH SCORES と PRESS SPACE TO START。
+            <span class="summary-en">"Screen 0 is mode 0x01. The name base shifts the low 7 bits of R#2 left by 10, and the pattern base shifts the low 6 bits of R#4 left by 11. Forty glyphs on a line, six pixels each, 192 lines. x below 8 or at 248 and above is the border, the low nibble of R#7. Otherwise the column is (x−8)/6. A set bit paints the high nibble of R#7, and a clear bit paints the border. Vertical scroll is not added. The beam takes 168 steps across 256 columns, so the published PPM paints all 40 columns, one pixel at a time. c0man at 450 frames has R#7 equal to 0x21. The green text reads COMAN, HIGH SCORES, and PRESS SPACE TO START."</span>
             </div>
-            <div class="doc-summary"><strong>NOTE:</strong> スプライトは合成されない。理由は、属性とパターンの床を控える欄はあっても、走査がその床を読まないこと。c0man のスプライトは VRAM にあり、画面には出ない。
-            <span class="summary-en">"NOTE: sprites are not composited. The registers that hold the attribute and pattern bases are there, and the scan does not read those bases. c0man's sprites sit in VRAM and do not reach the frame."</span>
+            <div class="doc-summary"><strong>NOTE:</strong> 画面 3 と画面 6 は、文字もビットマップも歩かない。理由は、そのモードの画素が R#7 の上位ニブルのパレット色を一面に返すだけで、ネームもパターンも読まないこと。
+            <span class="summary-en">"NOTE: screens 3 and 6 do not walk characters or a bitmap. A pixel in those modes returns one palette color, the high nibble of R#7, and the walk reads neither a name nor a pattern."</span>
+            </div>
+            <div class="doc-summary"><strong>NOTE:</strong> スプライトは合成されない。理由は、属性とパターンの床を控える欄はあっても、走査がその床を読まないこと。c0man の題字は画面 0 の文字である。xracing の題字は画面 2 のネームにある。
+            <span class="summary-en">"NOTE: sprites are not composited. The registers that hold the attribute and pattern bases are there, and the scan does not read those bases. c0man's title is screen 0 text. xracing's title is in the screen 2 name table."</span>
             </div>
             <div class="doc-summary"><strong>NOTE:</strong> YJK の復号は、この画素の計算から呼ばれない。理由は、式を輸入しただけで、R#25 を走査が見ず、四画素の簇を解く関数に呼び出しが無いこと。AUREL VAULT も NEON REVENANT も、記録された R#25 は 0 で、その題字自身はこの式を要求していない。
             <span class="summary-en">"NOTE: YJK decode is not called from this pixel calculation. The formula is imported, the scan does not read R#25, and the four-pixel cluster function has no caller. AUREL VAULT and NEON REVENANT both record R#25 as 0, so those titles do not ask for the formula."</span>
